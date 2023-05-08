@@ -8,7 +8,14 @@ pipeline {
         }
         stage ('Download lcov converter') {
             steps {
-                sh "curl -O https://raw.githubusercontent.com/eriwen/lcov-to-cobertura-xml/master/lcov_cobertura/lcov_cobertura.py"
+                sh '''
+                curl -O https://raw.githubusercontent.com/eriwen/lcov-to-cobertura-xml/master/lcov_cobertura/lcov_cobertura.py
+                apt install clang
+                apt install cmake
+                apt install ninja-build
+                apt install pkg-config
+ 
+                '''
             }
         }
         stage ('Flutter Doctor') {
