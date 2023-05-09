@@ -10,10 +10,7 @@ pipeline {
             steps {
                 sh '''
                 curl -O https://raw.githubusercontent.com/eriwen/lcov-to-cobertura-xml/master/lcov_cobertura/lcov_cobertura.py
-                apt install clang
-                apt install cmake
-                apt install ninja-build
-                apt install pkg-config
+               
  
                 '''
             }
